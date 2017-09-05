@@ -101,7 +101,8 @@ type JobHandler func(job Job)
  * Worker represents the worker that executes the job
  */
 type Worker struct {
-    WorkerPool chan chan Job
+    WorkerPool chan chan Job /* Every worker register's it's Job channel 
+                              * into this WorkerPool of channels */
     JobChannel chan Job /* A buffered channel that we can send work requests on. */
     quit       chan bool
     jobHandler JobHandler

@@ -1,0 +1,43 @@
+line is : show [a | b | c]* z 
+show a b | c | ? * . z . 
+p =  { show { T:NodeNull | { T:NodeNull | { a | b | c } } }* z T:NodeCR }
+nodeList for label show, { show }
+follow GNode show, is_repeatable false
+follow or { T:NodeNull | { a | b | c } }
+follow or { T:NodeNull | { T:NodeNull | { a | b | c } } }*
+follow or { T:NodeNull | { T:NodeNull | { a | b | c } } }*
+expected follow for show : a b c z
+Follow { a b c z }
+--------------- 
+nodeList for label a, { a }
+follow GNode a, is_repeatable false
+follow or { a | b | c }, is_repeatable false
+follow or { a | b | c }
+follow or { T:NodeNull | { a | b | c } }
+follow or { T:NodeNull | { T:NodeNull | { a | b | c } } }*
+expected follow for a : a b c z
+Follow { z }
+--------------- 
+nodeList for label b, { b }
+follow GNode b, is_repeatable false
+follow or { a | b | c }, is_repeatable false
+follow or { a | b | c }
+follow or { T:NodeNull | { a | b | c } }
+follow or { T:NodeNull | { T:NodeNull | { a | b | c } } }*
+expected follow for b : a b c z
+Follow { z }
+--------------- 
+nodeList for label c, { c }
+follow GNode c, is_repeatable false
+follow or { a | b | c }, is_repeatable false
+follow or { a | b | c }
+follow or { T:NodeNull | { a | b | c } }
+follow or { T:NodeNull | { T:NodeNull | { a | b | c } } }*
+expected follow for c : a b c z
+Follow { z }
+--------------- 
+nodeList for label z, { z }
+follow GNode z, is_repeatable false
+expected follow for z : T:NodeCR
+Follow { T:NodeCR }
+--------------- 

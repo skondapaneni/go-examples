@@ -1,0 +1,5 @@
+command "SHOW_INTERFACE"
+syntax "show interfaces" 
+keyword show "show keyword"
+keyword interfaces "all interfaces in the system"
+end
