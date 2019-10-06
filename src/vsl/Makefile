@@ -35,7 +35,7 @@ gox:
 
 build-all: test
 	which gox || make gox
-	gox -arch="386 amd64 arm" -os="darwin linux windows" github.com/skondapaneni/vsl/cmd/vsl
+	gox -arch="386 amd64 arm" -os="darwin linux windows" go-examples/src/vsl/cmd/vsl
 
 install: vslctl
 	mkdir -p $(bindir)

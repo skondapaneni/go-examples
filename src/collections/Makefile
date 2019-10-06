@@ -1,5 +1,6 @@
 PACKAGES=$(go list ./... | grep -v vendor)
-prefix=/Users/skondapaneni/go-client
+#prefix=/Users/skondapaneni/go-client
+prefix=/Users/skondapaneni/go-examples
 exec_prefix=$(prefix)
 bindir=$(exec_prefix)/bin
 datarootdir=$(prefix)/share
