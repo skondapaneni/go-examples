@@ -1,5 +1,5 @@
 package collections
 
 type Comparable interface {
-    Compare(b Comparable) bool
+    Compare(b interface{}) bool
 }
